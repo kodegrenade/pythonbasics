@@ -1,6 +1,8 @@
-# Week 4-5 Exercise 5
-months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-multi_list = []
-for month in months:
-    multi_list.append(month)
-print(multi_list)
+# Week 9-10 Exercise 2
+class test:
+    def __init__(self,a="Hello World"):
+        self.a=a
+        def display(self):
+            print(self.a)
+obj=test()
+obj.display()

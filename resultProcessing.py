@@ -83,11 +83,31 @@ def scoreGrade(score, course, grade_points):
         grade_points.append(unit)
     return weight_points, grade_points, grades
 
+def grading(gpa):
+    if (gpa >= 3.50 and gpa <= 4.00):
+        return "Distinction"
+    elif (gpa >= 3.00 and gpa <= 3.50):
+        return "Upper Credit"
+    elif (gpa >= 2.50 and gpa <= 2.99):
+        return "Lower Credit"
+    elif (gpa >= 2.00 and gpa <= 2.49):
+        "Pass"
+    elif (gpa < 2.00):
+        return "Fail"
+    else:
+        return "Not Applicable"
+
+print("First Semester Examination Scores.")
+print("*"*32)
+
 for i in range(len(first_semester_courses)):
     course = first_semester_courses[i]
     first_semester_courses[i] = int(input("Enter examination score for " + first_semester_courses[i] + ":\n"))
     first_semester_total += first_semester_courses[i]
     mark_grade = scoreGrade(first_semester_courses[i], course, grade_points)
+
+print("\nSecond Semester Examination Scores.")
+print("*"*32)
 
 for k in range(len(second_semester_courses)):
     course = second_semester_courses[k]
@@ -105,5 +125,5 @@ for key, values in grades.items():
     print("_"*32)
     print("{:<10} {:<10} {:<10}".format(str(values["course"]), str(values["score"]), str(values["grade"])))
 print("_"*32)
-print("CGPA:", round(grade_point_average, 2))
+print("CGPA:", str(round(grade_point_average, 2)) +" - "+ str(grading(round(grade_point_average, 2))))
 print("_"*32)
